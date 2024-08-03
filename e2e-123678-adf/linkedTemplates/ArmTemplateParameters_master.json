@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "e2e-123678-adf"
+		},
+		"ls_e2e_dl_accountKey": {
+			"value": ""
+		},
+		"ls_azure_databricks_e2e_properties_typeProperties_existingClusterId": {
+			"value": "0803-163846-lnua2itd"
+		},
+		"ls_e2e_dl_properties_typeProperties_url": {
+			"value": "https://e2e123678dl.dfs.core.windows.net/"
+		},
+		"ls_kv_properties_typeProperties_baseUrl": {
+			"value": "https://e2e-123678-kv.vault.azure.net/"
+		},
+		"ls_mimic_db_properties_typeProperties_server": {
+			"value": "mimic-onprem-server.database.windows.net"
+		},
+		"ls_mimic_db_properties_typeProperties_database": {
+			"value": "e2e-mimic-db"
+		},
+		"ls_mimic_db_properties_typeProperties_userName": {
+			"value": "christhomas123678"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
