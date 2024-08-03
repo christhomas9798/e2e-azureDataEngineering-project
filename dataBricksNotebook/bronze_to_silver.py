@@ -34,8 +34,8 @@
 
 # COMMAND ----------
 
-#md
-address_df=df
+# MAGIC %md
+# MAGIC address_df=df
 
 # COMMAND ----------
 
