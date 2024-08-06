@@ -1,0 +1,57 @@
+{
+	"name": "ds_e2edl_gold",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_ext_dl_via_access_key",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "SalesLT",
+				"fileSystem": "gold"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "address_id",
+				"type": "INT_32"
+			},
+			{
+				"name": "address_line1",
+				"type": "UTF8"
+			},
+			{
+				"name": "address_line2",
+				"type": "UTF8"
+			},
+			{
+				"name": "city",
+				"type": "UTF8"
+			},
+			{
+				"name": "state_province",
+				"type": "UTF8"
+			},
+			{
+				"name": "country_region",
+				"type": "UTF8"
+			},
+			{
+				"name": "postal_code",
+				"type": "UTF8"
+			},
+			{
+				"name": "rowguid",
+				"type": "UTF8"
+			},
+			{
+				"name": "modified_date",
+				"type": "DATE"
+			}
+		]
+	}
+}
