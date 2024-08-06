@@ -1,0 +1,17 @@
+{
+	"name": "usp_populate_gold_views",
+	"properties": {
+		"content": {
+			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://e2e123678dl.dfs.core.windows.net/bronze/SalesLT/Address/Address.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n\n\n\ncreate or alter procedure usp_populate_gold_views @view_name VARCHAR(40)\nas \nBEGIN\ndeclare @create_statement nvarchar(max);\nset @create_statement=\n'create or alter view '+@view_name+' as \nselect * from openrowset(bulk ''https://e2e123678dl.dfs.core.windows.net/gold/SalesLT/'+@view_name+'/'',\nformat=''DELTA''\n) as result';\n\nexec sp_executesql @create_statement;\nEND\n\ndeclare @view_nam varchar(40);\nset @view_nam='abc';\n\nprint('create or alter view gold.'+@view_nam+' as \nselect * from openrowset(bulk ''https://e2e123678dl.dfs.core.windows.net/gold/SalesLT/'+@view_nam+'/'',\nformat=''DELTA''\n) as result');\n\n\nSELECT OBJECT_DEFINITION(OBJECT_ID('dbo.usp_populate_gold_views')) AS ProcedureDefinition;\n\n\ncreate procedure usp_populate_gold_views @view_name VARCHAR(40) as BEGIN declare @create_statement nvarchar(max); set @create_statement= 'create or alter view '+@view_name+' as select * from openrowset(bulk ''https://e2e123678dl.dfs.core.windows.net/gold/SalesLT/'+@view_name+'/'', format=''DELTA'' ) as result'; exec sp_executesql @create_statement; END\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "gold_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
