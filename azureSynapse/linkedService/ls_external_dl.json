@@ -1,0 +1,25 @@
+{
+	"name": "ls_external_dl",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://e2e123678dl.dfs.core.windows.net/",
+			"tenant": "1e3be892-f580-4189-81e2-bbd1c64392c5",
+			"servicePrincipalId": "a3c95e06-fd21-4232-aba5-b87fd91948e6",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"servicePrincipalCredential": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_kv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "adlsSecret"
+			}
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
